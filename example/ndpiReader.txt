@@ -111,11 +111,22 @@
         ndpi_free_automa()
 
       * description
-        
-
+        # よくわかんないけど自動で文字列を追加するとか？？
 
     analyzeUnitTest();
+      * function
+        ndpi_alloc_data_analysis()
+        ndpi_free_data_analysis()
+        ndpi_data_add_value()
+    
+      * description
+        # これもよくわからなかった。 自動で何かするUnitのテストかな
+    
     ndpi_self_check_host_match();
+      * description
+        # error message を printfするところを見ると、重複してる文字列を見つけるための
+        # unit test かも
+
     analysisUnitTest();
     rulesUnitTest();
 
