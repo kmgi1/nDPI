@@ -1,7 +1,7 @@
 (main) : Line 4270
 	//Unit-Test
 		sesUnitTest(); 
-      * function used
+      * function
         ndpi_ses_init()
         ndpi_ses_add_value()
 
@@ -12,7 +12,7 @@
         # 結果的には、OK | ANOMALY が帰るようになっていた。
 
     desUnitTest();
-      * function used
+      * function
         ndpi_des_init()
         ndpi_des_add_value()
 
@@ -21,7 +21,7 @@
         # sesUnitTest()と同様、ランダムな数字を計算するためのfor文に入れていた。
 
     jitterUnitTest();
-      * function used
+      * function
         ndpi_jitter_init()
         ndpi_jitter_add_value()
     
@@ -30,7 +30,7 @@
         # 連続したPing値の平均を出すユニットのテストかも
 
     rsiUnitTest();
-      * function used
+      * function
         ndpi_free_rsi()   __#多分メモリ確保と開放
         ndpi_alloc_rsi()  _/
 
@@ -42,7 +42,7 @@
         # なんでここで出てくるかはよくわかってない。
       
     hashUnitTest();
-      * function used
+      * function
         ndpi_hash_alloc()  __#多分メモリ確保と開放
         ndpi_hash_free()   _/
       
@@ -54,7 +54,7 @@
         # hash値の値を格納するのかな？
 
     dgaUnitTest();
-      * function used
+      * function
         ndpi_init_detection_module
         ndpi_set_protocol_detection_bitmask2
         ndpi_finalize_initialization
@@ -70,8 +70,50 @@
         # DGA は マルウェア攻撃に使用するドメインを次々と切り替えるためなどに用いられる場合があるそう。
 
     hllUnitTest();
+      * function
+        ndpi_hll_init()
+        ndpi_hll_add_number()
+        ndpi_hll_destroy()
+
+      * description
+        # HyperLogLog Unit Test の略かも (HyperLogLogってなんぞや)
+        # src/lib/third_party/src/hll/hll.c を見るとソースコードに 
+        # HyperLogLogって書いてあった。
+
+        # 調べたらちゃんとそういうのがあった。
+        # HyperLogLogとは、データセットの中から効率よく重複を除いた要素の数を
+        # 見積もるためのものらしい。
+        # 高い効率を得るために正確さを少しだけ犠牲にしてるらしい。
+
+          # どのぐらい正確で効率が良いかというと、10億個以上の要素からなるデータから
+          # 2% 程度の誤差で要素数を見積もるのに1.5kB 程度のメモリしか消費しないらしい。
+          # 脱線したけど面白かった。
+          # 参考ページ : https://jp.quora.com/HyperLogLog-とは何ですか
+
     bitmapUnitTest();
+      * define
+        NDPI_ZERO_BIT()
+        NDPI_SET_BIT()
+        NDPI_ISSET_BIT()
+        NDPI_ISSET_BIT()
+
+      * description
+        # bitmap ってあの画像とかのbitmap?
+        # define NDPI_ISSET_BIT(num, n)  (num & (1UL << ( n )))
+        # まだ unsigned long (UL) についての理解がない
+        
     automataUnitTest();
+      * function
+        ndpi_init_automa()
+        ndpi_add_string_to_automa()
+        ndpi_finalize_automa()
+        ndpi_match_string()
+        ndpi_free_automa()
+
+      * description
+        
+
+
     analyzeUnitTest();
     ndpi_self_check_host_match();
     analysisUnitTest();
