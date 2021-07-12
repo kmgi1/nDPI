@@ -1,0 +1,79 @@
+(main) : Line 4270
+	//Unit-Test
+		sesUnitTest(); 
+      * function used
+        ndpi_ses_init()
+        ndpi_ses_add_value()
+
+      * description
+        # Session Unit Test の略かも
+        # 単一の指数平滑化方というワードが出てきた
+        # 現時点ではよくわからない少数点を含むランダムな数字を計算するためのfor文に入れていた。
+        # 結果的には、OK | ANOMALY が帰るようになっていた。
+
+    desUnitTest();
+      * function used
+        ndpi_des_init()
+        ndpi_des_add_value()
+
+      * description
+        # Destination Unit Test の略かも
+        # sesUnitTest()と同様、ランダムな数字を計算するためのfor文に入れていた。
+
+    jitterUnitTest();
+      * function used
+        ndpi_jitter_init()
+        ndpi_jitter_add_value()
+    
+      * description
+        # Jitter Unit Test 
+        # 連続したPing値の平均を出すユニットのテストかも
+
+    rsiUnitTest();
+      * function used
+        ndpi_free_rsi()   __#多分メモリ確保と開放
+        ndpi_alloc_rsi()  _/
+
+        ndpi_rsi_add_value()
+
+      * description
+        # RSI (Relative Strength Index) Unit Test の略かも
+        # RSIとは株とかで出てくる計算方法らしく、株の買われすぎ、売られすぎを数値で把握できるようにするものらしい。
+        # なんでここで出てくるかはよくわかってない。
+      
+    hashUnitTest();
+      * function used
+        ndpi_hash_alloc()  __#多分メモリ確保と開放
+        ndpi_hash_free()   _/
+      
+        ndpi_hash_add_entry()
+        ndpi_hash_find_entry()
+
+      * description
+        # alloc とか free とか出てきたので、メモリを確保する系の関数だと思われる。
+        # hash値の値を格納するのかな？
+
+    dgaUnitTest();
+      * function used
+        ndpi_init_detection_module
+        ndpi_set_protocol_detection_bitmask2
+        ndpi_finalize_initialization
+        ndpi_check_dga_name
+        ndpi_exit_detection_module
+
+      * description
+        # DGA (Domain Generation Algorithm) Unit Test の略かも
+        # dga という 自動生成されたドメインリストの配列と、
+        # non-dga という 人の手で作成されたドメインリストの配列を、
+        # それぞれ ndpi_check_dga_name() という関数に入れてチェックするテストだと思われる。
+
+        # DGA は マルウェア攻撃に使用するドメインを次々と切り替えるためなどに用いられる場合があるそう。
+
+    hllUnitTest();
+    bitmapUnitTest();
+    automataUnitTest();
+    analyzeUnitTest();
+    ndpi_self_check_host_match();
+    analysisUnitTest();
+    rulesUnitTest();
+
