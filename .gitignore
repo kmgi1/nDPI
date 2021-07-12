@@ -54,3 +54,23 @@ stamp-h1
 *.swp
 /test-driver
 /tests/Makefile
+
+# 下記 make コマンド実施後に作成の上記以外
+
+/example/libndpiReader.a
+/fuzz/Makefile
+/fuzz/.deps/fuzz_ndpi_reader_with_main-fuzz_ndpi_reader.Po
+/fuzz/.deps/fuzz_ndpi_reader-fuzz_ndpi_reader.Po
+/fuzz/.deps/fuzz_process_packet-fuzz_process_packet.Po
+/python/Makefile
+/src/include/ndpi_api.h
+/src/lib/libndpi.a
+/src/lib/libndpi.so
+/src/lib/libndpi.so.3
+/src/lib/libndpi.so.3.5.0
+/tests/do_valgrind.sh
+/tests/do.sh
+/tests/dga/dga_evaluate
+/tests/dga/Makefile
+/tests/unit/Makefile
+/tests/unit/unit
